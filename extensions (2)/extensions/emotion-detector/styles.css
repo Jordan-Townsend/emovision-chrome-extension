@@ -1,0 +1,95 @@
+/* EmoVision Extension - Main Styles */
+
+:root {
+  --color-happy: #FFD93D;
+  --color-sad: #5E7CE2;
+  --color-angry: #FF6B6B;
+  --color-surprise: #95E1D3;
+  --color-fear: #845EC2;
+  --color-disgust: #A6D854;
+  --color-neutral: #C9C9C9;
+}
+
+/* Emotion overlay elements */
+.emotion-badge {
+  position: fixed;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 10000;
+  pointer-events: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  animation: fadeInOut 1s ease-in-out;
+}
+
+.emotion-badge.happy {
+  background: var(--color-happy);
+  color: #000;
+}
+
+.emotion-badge.sad {
+  background: var(--color-sad);
+  color: #fff;
+}
+
+.emotion-badge.angry {
+  background: var(--color-angry);
+  color: #fff;
+}
+
+.emotion-badge.surprise {
+  background: var(--color-surprise);
+  color: #000;
+}
+
+.emotion-badge.fear {
+  background: var(--color-fear);
+  color: #fff;
+}
+
+.emotion-badge.disgust {
+  background: var(--color-disgust);
+  color: #000;
+}
+
+.emotion-badge.neutral {
+  background: var(--color-neutral);
+  color: #000;
+}
+
+/* Emotion detection box */
+.emotion-box {
+  position: fixed;
+  border: 2px solid;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 10000;
+  animation: fadeInOut 1s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Emotion indicator */
+.emotion-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EmoVision - Emotion Detection</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <div class="popup-header">
+      <div class="logo">
+        <span class="emoji">😊</span>
+        <h1>EmoVision</h1>
+      </div>
+      <p class="subtitle">Real-time Emotion Detection</p>
+    </div>
+
+    <!-- Status -->
+    <div class="status-section">
+      <div class="platform-info">
+        <span class="label">Current Site:</span>
+        <span id="platform" class="value">Detecting...</span>
+      </div>
+      <div class="site-status" id="siteStatus">
+        <span id="statusBadge" class="status-badge">⏸️ Not Active</span>
+      </div>
+    </div>
+
+    <!-- Site Controls -->
+    <div class="site-controls-section">
+      <h3 class="section-title">This Site</h3>
+      <div class="site-actions">
+        <button id="toggleSite" class="btn btn-primary">Enable on This Site</button>
+        <button id="addToWhitelist" class="btn btn-small">Add to Whitelist</button>
+        <button id="addToBlacklist" class="btn btn-small btn-danger">Add to Blacklist</button>
+      </div>
+    </div>
+
+    <!-- Main Controls -->
+    <div class="controls-section">
+      <h3 class="section-title">Global Settings</h3>
+      <div class="toggle-control">
+        <label class="toggle-label">
+          <input type="checkbox" id="globalToggle" class="toggle-switch">
+          <span class="toggle-slider"></span>
+          <span class="toggle-text">Master Switch</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-section" id="statsSection" style="display: none;">
+      <div class="stat-item">
+        <span class="stat-label">Faces Detected:</span>
+        <span id="faceCount" class="stat-value">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Dominant Emotion:</span>
+        <span id="dominantEmotion" class="stat-value">—</span>
+      </div>
+    </div>
+
+    <!-- YouTube/Twitch URL Analysis -->
+    <div class="youtube-section">
+      <h3 class="section-title">📺 Analyze Video URL</h3>
+      <p class="help-text">Paste a YouTube or Twitch URL to analyze emotions throughout the video</p>
+      <div class="youtube-input">
+        <input type="text" id="youtubeURL" class="input-field" placeholder="https://youtube.com/... or https://twitch.tv/...">
+        <button id="analyzeYoutube" class="btn btn-primary">Analyze</button>
+      </div>
+      <div id="youtubeStatus" class="status-message" style="display: none;"></div>
+      <div id="youtubeResults" class="results-container" style="display: none;"></div>
+    </div>
+
+    <!-- Settings -->
+    <div class="settings-section">
+      <div class="setting">
+        <label class="setting-label">Backend URL:</label>
+        <input type="text" id="backendURL" class="input-field" placeholder="https://emovision.net">
+      </div>
+      <button id="saveSettings" class="btn btn-secondary">Save Settings</button>
+    </div>
+
+    <!-- Whitelist -->
+    <div class="list-section">
+      <h3 class="section-title">Whitelist <span class="list-count" id="whitelistCount">0</span></h3>
+      <div id="whitelistItems" class="list-items">
+        <p class="empty-state">No sites in whitelist</p>
+      </div>
+    </div>
+
+    <!-- Blacklist -->
+    <div class="list-section">
+      <h3 class="section-title">Blacklist <span class="list-count" id="blacklistCount">0</span></h3>
+      <div id="blacklistItems" class="list-items">
+        <p class="empty-state">No sites blacklisted</p>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="features-section">
+      <h3>Features</h3>
+      <ul class="features-list">
+        <li>✨ Works on ALL video sites</li>
+        <li>👥 Unlimited face detection</li>
+        <li>📋 Whitelist/Blacklist control</li>
+        <li>🎯 Per-site toggles</li>
+      </ul>
+    </div>
+
+    <!-- Footer -->
+    <div class="popup-footer">
+      <a href="https://emovision.net" target="_blank" class="footer-link">Visit EmoVision</a>
+      <span class="version">v2.0.0</span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
